@@ -1,0 +1,12 @@
+{
+  "profiles": {
+    "Cart.API": {
+      "commandName": "Project",
+      "applicationUrl": "http://localhost:5217;https://localhost:7026",
+      "environmentVariables": {
+        "ASPNETCORE_ENVIRONMENT": "Development"
+      },
+      "dotnetRunMessages": true
+    }
+  }
+}

@@ -1,0 +1,17 @@
+﻿syntax = "proto3";
+
+message CustomerRequest {
+    string id = 1;
+}
+
+message CustomerResponse {
+    string id = 1;
+    string CustomerName = 2;
+    string Address = 3;
+    string City = 4;
+    string Country = 5;
+}
+
+service CustomerRPC {
+    rpc GetCustomerById(CustomerRequest) returns (CustomerResponse);
+}

@@ -1,0 +1,27 @@
+﻿syntax = "proto3";
+
+message CartRequest {
+    string id = 1;
+}
+
+message CustomerCartRequest {
+    string buyerId = 1;
+    repeated CartItem items = 2;
+}
+    
+message CustomerCartResponse {
+    string buyerId = 1;
+    repeated CartItem items = 2;
+}
+
+message CartItem {
+    int32 ProductId = 1;
+    string ProductName = 2;
+    double UnitPrice = 3;
+    int32 Quantity = 4;
+}
+
+service CartRPC {
+    rpc GetCartById(CartRequest) returns (CustomerCartResponse);
+    rpc UpdateCart(CustomerCartRequest) returns (CustomerCartResponse);
+}

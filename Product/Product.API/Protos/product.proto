@@ -1,0 +1,30 @@
+﻿syntax = "proto3";
+
+message ProductRequest {
+    int32 id = 1;
+}
+
+message ProductResponse {
+    int32 ProductId = 1;
+    string ProductName = 2;
+    double UnitPrice = 3;
+    int32 Quantity = 4;
+}
+
+message ProductsRequest {
+    string ids = 1;
+    int32 pageIndex = 2;
+    int32 pageSize = 3;
+}
+
+message PaginatedProductsResponse {
+    int32 pageIndex = 1;
+    int32 pageSize = 2;
+    int64 count = 3;
+    repeated ProductResponse data = 4;
+}
+
+service ProductRPC {
+    rpc GetItemById(ProductRequest) returns (ProductResponse);
+    rpc GetItemByIds(ProductsRequest) returns (PaginatedProductsResponse);
+}
