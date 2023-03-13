@@ -14,14 +14,23 @@
     <None Remove="Protos\" />
     <None Remove="Services\" />
     <None Remove="Protos\customer.proto" />
+    <None Remove="Infra\" />
+    <None Remove="Infra\Repositories\" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Protos\" />
     <Folder Include="Services\" />
+    <Folder Include="Infra\" />
+    <Folder Include="Infra\Repositories\" />
   </ItemGroup>
   <ItemGroup>
     <Protobuf Include="Protos\customer.proto" GrpcServices="ClientAndServer">
       <Link>Protos\customer.proto</Link>
     </Protobuf>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\BusinessObjects\BusinessObjects.csproj">
+      <GlobalPropertiesToRemove></GlobalPropertiesToRemove>
+    </ProjectReference>
   </ItemGroup>
 </Project>

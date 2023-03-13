@@ -26,4 +26,9 @@
       <Link>Protos\cart.proto</Link>
     </Protobuf>
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\BusinessObjects\BusinessObjects.csproj">
+      <GlobalPropertiesToRemove></GlobalPropertiesToRemove>
+    </ProjectReference>
+  </ItemGroup>
 </Project>
