@@ -13,18 +13,14 @@ message ProductResponse {
 
 message ProductsRequest {
     string ids = 1;
-    int32 pageIndex = 2;
-    int32 pageSize = 3;
 }
 
-message PaginatedProductsResponse {
-    int32 pageIndex = 1;
-    int32 pageSize = 2;
-    int64 count = 3;
-    repeated ProductResponse data = 4;
+message ProductsResponse {
+    int64 count = 1;
+    repeated ProductResponse data = 2;
 }
 
 service ProductRPC {
     rpc GetItemById(ProductRequest) returns (ProductResponse);
-    rpc GetItemByIds(ProductsRequest) returns (PaginatedProductsResponse);
+    rpc GetItemByIds(ProductsRequest) returns (ProductsResponse);
 }

@@ -2,7 +2,8 @@
   "profiles": {
     "Product.API": {
       "commandName": "Project",
-      "applicationUrl": "http://localhost:5072;https://localhost:7197",
+      "launchUrl": "swagger",
+      "applicationUrl": "http://localhost:5002",
       "environmentVariables": {
         "ASPNETCORE_ENVIRONMENT": "Development"
       },

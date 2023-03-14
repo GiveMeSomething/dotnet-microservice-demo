@@ -1,12 +1,26 @@
-﻿var builder = WebApplication.CreateBuilder(args);
+﻿using BusinessObjects.Models;
+using Product.API.Infra.Repositories;
 
-// Additional configuration is required to successfully run gRPC on macOS.
-// For instructions on how to configure Kestrel and gRPC clients on macOS, visit https://go.microsoft.com/fwlink/?linkid=2099682
+var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
+builder.Services.AddSwaggerGen();
+
 builder.Services.AddGrpc();
+builder.Services.AddControllers();
+builder.Services.AddDbContext<EShopContext>();
+
+builder.Services.AddScoped<IProductRepository, ProductRepository>();
 
 var app = builder.Build();
+
+if(app.Environment.IsDevelopment())
+{
+    app.UseSwagger();
+    app.UseSwaggerUI();
+}
+
+app.MapControllers();
 
 app.Run();
 

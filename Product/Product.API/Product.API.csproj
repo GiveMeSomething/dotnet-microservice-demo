@@ -8,20 +8,34 @@
 
   <ItemGroup>
     <PackageReference Include="Grpc.AspNetCore" Version="2.51.0" />
+    <PackageReference Include="Swashbuckle.AspNetCore.SwaggerGen" Version="6.5.0" />
+    <PackageReference Include="Swashbuckle.AspNetCore.SwaggerUI" Version="6.5.0" />
+    <PackageReference Include="Swashbuckle.AspNetCore.Swagger" Version="6.5.0" />
   </ItemGroup>
 
   <ItemGroup>
     <None Remove="Protos\" />
     <None Remove="Services\" />
     <None Remove="Protos\product.proto" />
+    <None Remove="Controllers\" />
+    <None Remove="Infra\" />
+    <None Remove="Infra\Repositories\" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Protos\" />
     <Folder Include="Services\" />
+    <Folder Include="Controllers\" />
+    <Folder Include="Infra\" />
+    <Folder Include="Infra\Repositories\" />
   </ItemGroup>
   <ItemGroup>
     <Protobuf Include="Protos\product.proto" GrpcServices="ClientAndServer">
       <Link>Protos\product.proto</Link>
     </Protobuf>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\BusinessObjects\BusinessObjects.csproj">
+      <GlobalPropertiesToRemove></GlobalPropertiesToRemove>
+    </ProjectReference>
   </ItemGroup>
 </Project>
