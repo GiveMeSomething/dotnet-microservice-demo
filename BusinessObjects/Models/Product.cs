@@ -19,7 +19,7 @@ namespace BusinessObjects.Models
 		[Required]
 		public int Quantity { get; set; }
 
-		public IEnumerable<CartProduct> CartProducts { get; set; }
+		public virtual IEnumerable<CartProduct>? CartProducts { get; set; }
 	}
 }
 

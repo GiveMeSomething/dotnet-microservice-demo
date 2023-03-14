@@ -16,16 +16,9 @@ namespace BusinessObjects.Models
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
-            // Quick fix to get fixed appsettings.json inside BusinessObjects project
-            var realPath = Directory.GetParent(Directory.GetCurrentDirectory())?.FullName;
-            if (realPath == null)
-            {
-                throw new Exception("Path to appsettings is incorrect");
-            }
-
             var builder = new ConfigurationBuilder()
-                .SetBasePath(realPath)
-                .AddJsonFile("BusinessObjects/appsettings.json");
+                .SetBasePath(Directory.GetCurrentDirectory())
+                .AddJsonFile("appsettings.json");
 
             var connectionString = builder.Build().GetConnectionString("DefaultConnection");
 

@@ -13,7 +13,7 @@ namespace BusinessObjects.Models
 		public int CustomerId { get; set; }
 		public Customer Customer { get; set; }
 
-        public IEnumerable<CartProduct> CartProducts { get; set; }
+        public virtual IEnumerable<CartProduct>? CartProducts { get; set; }
     }
 }
 
