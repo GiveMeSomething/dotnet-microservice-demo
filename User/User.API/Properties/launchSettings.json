@@ -2,7 +2,7 @@
   "profiles": {
     "User.API": {
       "commandName": "Project",
-      "applicationUrl": "http://localhost:5215;https://localhost:7240",
+      "applicationUrl": "http://localhost:5001",
       "environmentVariables": {
         "ASPNETCORE_ENVIRONMENT": "Development"
       },

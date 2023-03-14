@@ -16,9 +16,7 @@ message CustomerCartResponse {
 
 message CartItem {
     int32 ProductId = 1;
-    string ProductName = 2;
-    double UnitPrice = 3;
-    int32 Quantity = 4;
+    int32 Quantity = 2;
 }
 
 service CartRPC {

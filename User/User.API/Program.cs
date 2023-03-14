@@ -1,5 +1,6 @@
 ﻿using BusinessObjects.Models;
 using User.API.Infra.Repositories;
+using User.API.Services;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -10,9 +11,11 @@ var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddGrpc();
 
 builder.Services.AddDbContext<EShopContext>();
-builder.Services.AddSingleton<IUserRepository, UserRepository>();
+builder.Services.AddScoped<IUserRepository, UserRepository>();
 
 var app = builder.Build();
+
+app.MapGrpcService<CustomerService>();
 
 app.Run();
 

@@ -17,9 +17,13 @@
   <ItemGroup>
     <None Remove="gRPC\" />
     <None Remove="Protos\cart.proto" />
+    <None Remove="Infra\" />
+    <None Remove="Infra\Repositories\" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Services\" />
+    <Folder Include="Infra\" />
+    <Folder Include="Infra\Repositories\" />
   </ItemGroup>
   <ItemGroup>
     <Protobuf Include="Protos\cart.proto" GrpcServices="ClientAndServer">
